@@ -36,16 +36,17 @@ session_start();
     </div> 
     
     <?php
-    //if not empty 
-    if(!empty($user)):?>
-     <br/>Welcome <?= $user['email'];?>
-     <br/> <br/>You are now logged in!
-     <br/> <br/>
-     
+    //if not empty and the email it's in the database show "You are logged in page" else redirect to index
+   if(!empty($user)):?>
+     <?= $user['email'];?>
+     <br/><br/>You are now logged in!
+     <br/><br/>
+     <a href="sercet.php">Visit the secret page.</a>
+     <br/><br/>
      <a href="logout.php">Logout</a>
     <?php else: ?>
         
-  <h1>Please Log In or Register</h1>
+  <h1>Welcome!</h1>
   <a href="login.php">Login</a> or
   <a href="register.php">Register</a>
     <?php endif; ?>

@@ -1,0 +1,59 @@
+body{
+    margin:0px;
+    padding:0px;
+    font-family:'Raleway', cursive;
+    text-align:center;
+    
+    
+h3,a{text-align:center;
+   
+}
+    
+}
+
+a{text-decoration:none;
+
+}
+
+input[type="text"], input[type="password"]{
+    outline:blue;
+    padding:10px;
+    display:block;
+    width:300px;
+    border-radius:20px;
+    border:1px solid #eee;
+    margin:20px auto;
+    
+}
+
+
+
+input[type="submit"]{
+    padding:10px;
+    color:#fff;
+    background:#4a281f;
+    width:320px;
+    margin:20px auto;
+    margin-top:0px;
+    border:0px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+input[type="submit"]:hover{
+    background:#5d3227;
+}
+
+.header{border-bottom:1px solid #eee;
+        padding:10px 0px;
+        width:100%;
+        text-align:left;
+}
+
+.header a{font: bold 40px  'Raleway';
+          color: #333;
+          line-height: 70%;
+          letter-spacing: -2px;
+          text-decoration:none;
+          margin-left:100px;
+}

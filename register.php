@@ -11,12 +11,14 @@ require 'database.php';
 $message= '';
 
 
+
+
 if(!empty($_POST['email']) && !empty($_POST['password'])):
  //Enter the new user in the database
  $sql="INSERT INTO userlogin(email,password)VALUES (:email, :password)";
  $stmt= $conn->prepare($sql);
- 
- $stmt->bindParam(':email',$_POST['email']);
+  
+ $stmt->bindParam(':email',($_POST["email"]));
  $stmt->bindParam(':password', password_hash($_POST['password'], PASSWORD_BCRYPT));
 
  if($stmt->execute()):
@@ -53,27 +55,11 @@ endif;
     <span>Or <a href="login.php">log in here.</a></span>
     
     <form action="register.php" method="POST">
-        <input type="text" placeholder="Enter your email" name="email">
-        <input type="password" placeholder="Enter your password" name="password">
-        <input type="password" placeholder="Confirm password" name="confirm_password">
+        <input type="text" placeholder="Enter your email" name="email" required="Must be filled out">
+        <input type="password" placeholder="Enter your password" name="password" required="Must be filled out">
+        <input type="password" placeholder="Confirm password" name="confirm_password" required="Must be filled out">
         <input type="submit">
-        
-<script>
-    var password = document.getElementById("password")
-  , confirm_password = document.getElementById("confirm_password");
 
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
-
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
-    
-    
-</script>
+</script>        
 </body>
 </html>
